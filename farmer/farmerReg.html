@@ -1,0 +1,138 @@
+<html>
+<head><title>Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Yatra+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/7e66ffa18d.js" crossorigin="anonymous"></script>
+</head>
+<style>
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+.freg_container{
+
+padding:0px 150px;
+margin-top:0px;
+height:500px;
+}
+
+#submit{
+background-color:#F08080;
+width:170px;
+height:40px;
+border-style:none;
+border-radius:5px;
+cursor:pointer;
+}
+#submit:hover{
+background-color:#20639B;
+color:white;
+}
+#facebookbtn{
+background-color:#20639B;
+width:170px;
+height:40px;
+border-style:none;
+border-radius:5px;
+cursor:pointer;
+}
+#googlebtn{
+background-color:#FFA500;
+width:170px;
+height:40px;
+border-style:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:5px;
+}
+#label{
+padding-left:10px;
+}
+</style>
+<body>
+<div class=" col-12 freg_container">
+
+<div class="col-4 freg_details">
+<h2 style="font-family: 'Yatra One', cursive;">Soko</h2>
+
+<h1 style="font-family: 'Yatra One', cursive;"> Create Account</h1>
+
+<input type="text" placeholder="First Name"></br>
+<input type="text" style="margin-top:10px;" placeholder="Last Name"></br>
+<input type="text" style="margin-top:10px;"placeholder="username"></br>
+<input type="text" style="margin-top:10px;"placeholder="Email"></br>
+<select name="home-place" style="margin-top:10px;"onchange="places()" id="place">
+  <option value="Nairobi">Nairobi</option>
+  <option value="Kiambu">Kiambu</option></select></br>
+
+<select name="location" style="margin-top:10px;" id="location">
+<option value="Location">location</option>
+</select></br>
+<input type="text" style="margin-top:10px;"placeholder="password"></br>
+<input type="text" style="margin-top:10px;"placeholder="Confirm Password"></br>
+<input type="submit" style="margin-top:10px;"id="submit" value="continue"></br>
+<span style="margin-left:100px;">-or-</span></br>
+<button id="facebookbtn"><i class="fab fa-facebook"></i><span id="label">facebook</span></button></br>
+<button id="googlebtn"><i class="fab fa-google"></i><span id="label">Google</span></button></br>
+</div>
+<div class="freg_image">
+
+<img src="farmer.jpg" alt="soko" width="500px" height="530px">
+</div>
+
+
+</div>
+
+
+</body>
+
+
+<script>
+
+  function places(){
+    var home=document.getElementById("place").value;
+    if(home==="Nairobi"){
+      var array=['Kahawa','Embakasi','Roysambu'];
+    }
+    else if(home==="Kiambu"){
+      var array=['Kiambu Town','Juja','Thika'];
+    }
+    var string = "";
+            for (let i = 0; i < array.length; i++) {
+                string = string + "<option>" + array[i] + "</option>";
+
+            }
+            string = "<select name = 'location'>" + string + "</select>"
+            document.getElementById('location').innerHTML = string;
+        
+}
+  </script>
+
+
+</html>
+<?php
+
+include("../includes/db.php")
+
+
+
+?>
